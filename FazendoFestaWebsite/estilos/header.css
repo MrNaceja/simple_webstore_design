@@ -1,0 +1,128 @@
+header {
+    background-color: var(--cor_branco);
+    height: 80px;
+    border-bottom: 2px solid var(--cor_suave_25);
+    align-items: center;
+    justify-content: space-between;
+    position:relative;
+} header .container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+/* Estilização Logotipo */
+header .logo {
+    user-select: none;
+    font-size: 1em;
+} header .logo h1 {
+    padding: 0 .3rem;
+}   header .logo h1:first-child {
+        color:var(--cor_primaria);
+        font-weight: 300;
+    } header .logo h1:last-child {
+        background: var(--cor_primaria);
+        color:var(--cor_branco);
+        border-radius: 5px;
+        padding: 0 15px;
+        font-weight: 600;
+    }
+
+/* Estilização Navbar Dessktop*/
+header nav {
+    height:100%;
+    font-size: 1.2em;
+    display: flex;
+} header nav a {
+        transition: .2s;
+        cursor:pointer;
+        height: 100%;
+        color:var(--cor_suave_50);
+        border-bottom: 5px solid var(--cor_suave_25);
+    } header nav a.ativo {
+        color:var(--cor_primaria);
+        border-bottom-color: var(--cor_primaria);
+    }
+    header nav a:hover {
+        color:var(--cor_primaria);
+        border-bottom-color: var(--cor_primaria_25);
+    }
+        header nav a h4 {
+            user-select: none;
+            font-weight: 700;
+        }
+
+#btn_abre_fecha_menu_mobile {
+    display: none;
+    cursor: pointer;
+}
+
+/* Estilização Dispositivos Mobile */
+@media (max-width: 980px) {
+    header nav {
+        flex-direction: column;
+        position:absolute;
+        height: 100vh;
+        top:0;
+        transition: .5s;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--cor_branco);
+        box-shadow: -10px 0px 15px var(--cor_escuro_25);
+    } header nav.menu_aberto {
+        right:0;
+    } header nav.menu_fechado {
+        right:-100%;
+    }
+        header nav a.col_3 {
+            height: var(--w_2);
+            width: 100%;
+            border-bottom:none;
+        } header nav a.ativo {
+            border-left: 5px solid var(--cor_primaria);
+        }
+
+    #btn_abre_fecha_menu_mobile {
+        display: grid;
+        height:60px;
+        width:60px;
+        border-radius:50%;
+        position: absolute;
+        padding: 0 20px;
+        right:20px;
+    } 
+    .btn_hamburguer_cross{
+        height:2px;
+        width: 100%;
+        background:var(--cor_primaria);
+        border-radius:3px;
+        position: relative;
+        transition: .2s;
+    } header nav.menu_fechado + button .btn_hamburguer_cross::after, 
+      header nav.menu_fechado + button .btn_hamburguer_cross::before {
+        content: '';
+        height:2px;
+        width:100%;
+        position: absolute;
+        display: block;
+        background: var(--cor_primaria);
+    } header nav.menu_fechado + button .btn_hamburguer_cross::after {
+        top:-5px;
+    } header nav.menu_fechado + button .btn_hamburguer_cross::before {
+        bottom:-5px;
+    }
+    header nav.menu_aberto + button .btn_hamburguer_cross{
+        transform: rotate(45deg);
+    } header nav.menu_aberto + button .btn_hamburguer_cross::after,
+      header nav.menu_aberto + button .btn_hamburguer_cross::before {
+        content: '';
+        height:2px;
+        width:100%;
+        position: absolute;
+        display: block;
+        background: var(--cor_primaria);
+        transform: rotate(90deg);
+        bottom:0;
+        top:0;
+    }
+}
