@@ -1,0 +1,51 @@
+footer {
+    height: 20vh;
+    background: var(--cor_suave_25);
+    color: var(--cor_escuro_50);
+    position: absolute;
+    width: var(--perc_full);
+    bottom: 0;
+}
+footer .logo {
+    filter: grayscale(100%) opacity(.5);
+}
+
+footer .container {
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer p {
+    font-size: .9em;
+    font-weight: 400;
+    text-align: center;
+}
+
+.redes_sociais a {
+    cursor:pointer;
+    transition:.2s;
+    height: 60px;
+    width:60px;
+    border-radius: 50%;
+    background-color: rgba(var(--cor_suave_rgb), .05);
+    color: var(--cor_escuro_50);
+} .redes_sociais a:hover {
+    transform: translateY(-5px);
+    background-color: rgba(var(--cor_primaria_rgb),.1);
+    color:var(--cor_primaria)
+}
+.redes_sociais a + a {
+    margin-left: 10px;
+}
+
+/* Estilização Dispositivos Mobile */
+@media (max-width: 900px) {
+    footer {
+        height: 30vh;
+        padding: 15px 0;
+    }
+    footer .container {
+        flex-direction: column;
+        align-items: center;
+    }
+}

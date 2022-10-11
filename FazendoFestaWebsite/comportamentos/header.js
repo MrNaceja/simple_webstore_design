@@ -10,5 +10,4 @@ function controlaMenu(oInstanceBtn) {
     } else {
         oMenu.classList.replace('menu_fechado','menu_aberto');
     }
-    
 }

@@ -8,35 +8,18 @@ header {
 } header .container {
     display: flex;
     align-items: center;
-    height: 100%;
+    height:var(--perc_full);
 }
 
-/* Estilização Logotipo */
-header .logo {
-    user-select: none;
-    font-size: 1em;
-} header .logo h1 {
-    padding: 0 .3rem;
-}   header .logo h1:first-child {
-        color:var(--cor_primaria);
-        font-weight: 300;
-    } header .logo h1:last-child {
-        background: var(--cor_primaria);
-        color:var(--cor_branco);
-        border-radius: 5px;
-        padding: 0 15px;
-        font-weight: 600;
-    }
-
-/* Estilização Navbar Dessktop*/
+/* Estilização Navbar Desktop*/
 header nav {
-    height:100%;
+    height:var(--perc_full);
     font-size: 1.2em;
     display: flex;
 } header nav a {
         transition: .2s;
         cursor:pointer;
-        height: 100%;
+        height: var(--perc_full);
         color:var(--cor_suave_50);
         border-bottom: 5px solid var(--cor_suave_25);
     } header nav a.ativo {
@@ -69,20 +52,22 @@ header nav {
         justify-content: center;
         background-color: var(--cor_branco);
         box-shadow: -10px 0px 15px var(--cor_escuro_25);
+        z-index: 2;
     } header nav.menu_aberto {
         right:0;
     } header nav.menu_fechado {
         right:-100%;
     }
         header nav a.col_3 {
-            height: var(--w_2);
-            width: 100%;
+            height: var(--perc_2);
+            width: var(--perc_full);
             border-bottom:none;
         } header nav a.ativo {
             border-left: 5px solid var(--cor_primaria);
         }
 
     #btn_abre_fecha_menu_mobile {
+        z-index: 999;
         display: grid;
         height:60px;
         width:60px;
@@ -93,7 +78,7 @@ header nav {
     } 
     .btn_hamburguer_cross{
         height:2px;
-        width: 100%;
+        width: var(--perc_full);
         background:var(--cor_primaria);
         border-radius:3px;
         position: relative;
@@ -102,7 +87,7 @@ header nav {
       header nav.menu_fechado + button .btn_hamburguer_cross::before {
         content: '';
         height:2px;
-        width:100%;
+        width:var(--perc_full);
         position: absolute;
         display: block;
         background: var(--cor_primaria);
@@ -117,7 +102,7 @@ header nav {
       header nav.menu_aberto + button .btn_hamburguer_cross::before {
         content: '';
         height:2px;
-        width:100%;
+        width:var(--perc_full);
         position: absolute;
         display: block;
         background: var(--cor_primaria);

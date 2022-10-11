@@ -6,10 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./estilos/estilo_global.css">
     <script src="./comportamentos/header.js"></script>
+    <script src="./comportamentos/toolbar.js"></script>
+    <script src="https://kit.fontawesome.com/dbe0b3e2fa.js" crossorigin="anonymous"></script>
     <title>Fazendo Festa Store</title>
 </head>
 <body>
-    <header class="col-12">
+    <header class="col_12">
         <div class="container">
             <div class="logo flex_row col_6">
                 <h1>fazendo</h1>
@@ -32,5 +34,45 @@
             <button class="centralize_item" id="btn_abre_fecha_menu_mobile" onclick="controlaMenu(this)"><i class="btn_hamburguer_cross"></i></button>
         </div>
     </header>
+    <div class="toolbar">
+        <div class="container flex_row menu_fechado">
+            <form class="filtro flex_row">
+                <div class="filtro_campo campo_lista" id="filtro_categoria">
+                    <select name="cat">
+                        <option selected disabled>Categoria</option>
+                        <option value="1">Teste</option>
+                        <option value="2">Outro teste</option>
+                    </select>
+                </div>
+                <button class="centralize_item filtro_btn" type="submit"><i class="fa-solid fa-filter"></i></button>
+            </form>
+            <form class="filtro flex_row">
+                <div class="filtro_campo campo_pesquisa flex_row">
+                    <input type="text" name="pesquisa" placeholder="pesquisar na loja">
+                </div>
+                <button class="centralize_item filtro_btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+        </div>
+        <button id="btn_acessa_filtros_mobile" class="centralize_item" onclick="controlaMenuFiltro(this)"><i class="fa-solid fa-filter"></i></button>
+    </div>
+    <section class="galeria_produtos">
+        <div class="container">
+
+        </div>
+    </section>
+    <footer>
+        <div class="container flex_row">
+            <div class="logo flex_row">
+                <h1>fazendo</h1>
+                <h1>festa</h1>
+            </div>
+            <p>2022© Fazendo Festa - Direitos Reservados www.fazendofestavp.com.br</p>
+            <div class="redes_sociais flex_row">
+                <a class="centralize_item"><i class="fa-brands fa-whatsapp fa-2x"></i></a>
+                <a class="centralize_item"><i class="fa-brands fa-instagram fa-2x"></i></a>
+                <a class="centralize_item"><i class="fa-brands fa-facebook-f fa-2x"></i></a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

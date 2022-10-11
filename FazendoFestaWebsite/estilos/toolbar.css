@@ -1,0 +1,130 @@
+.toolbar {
+    height: 60px;
+}
+.toolbar .container {
+    background: var(--cor_branco);
+    height: var(--perc_full);
+    margin-top:15px;
+    border-radius: 5px;
+    border-bottom: 2px solid var(--cor_suave_25);
+    box-shadow: 0 15px 10px -20px var(--cor_suave_50);
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+.filtro{
+    width: var(--perc_4);
+    align-items: center;
+    height: 3.5em;
+    justify-content: space-between;
+    border: 2px solid var(--cor_suave_25);
+    border-radius: 5px;
+    overflow: hidden;
+}.filtro_campo {
+    width:var(--perc_8);
+    height:var(--perc_full);
+}.filtro_btn {
+    height:var(--perc_full);
+    width:var(--perc_3);
+    color: var(--cor_suave_50);
+    background-color: var(--cor_suave_25);
+    cursor:pointer;
+    transition: .3s;
+}   .filtro_btn:hover {
+        color: var(--cor_branco);
+        background-color: var(--cor_primaria);
+    }
+
+/* Estilização Campo de Lista */
+.campo_lista {
+    position: relative;
+    color:var(--cor_suave_50);
+    border-radius: 5px;
+}
+.campo_lista select option:disabled{
+    background-color: var(--cor_suave_25);
+    color:rgba(var(--cor_suave_rgb),.3);
+}
+.campo_lista select {
+    padding: 5px 10px;
+    color:var(--cor_suave_50);
+    border:none;
+    height: var(--perc_full);
+    width: var(--perc_full);
+    outline: none;
+    appearance: none;
+    font-weight: 500;
+}
+.campo_lista::after {
+    content: '\f160';
+    font-family: "Font Awesome 5 Free";
+    height:var(--perc_full);
+    width:var(--perc_3);
+    position: absolute;
+    display: grid;
+    place-items: center;
+    right: 10px;
+    top:0;
+    pointer-events: none;
+}
+
+/* Estilização Campo de Pesquisa */
+.campo_pesquisa input {
+    width: var(--perc_full);
+    padding:10px;
+    color:var(--cor_suave_50);
+}
+.campo_pesquisa input::-webkit-input-placeholder {
+    color:var(--cor_suave_50);
+}
+#btn_acessa_filtros_mobile {
+    display: none;
+}
+/* Estilização Dispositivos Mobile */
+@media (max-width: 765px) {
+    .toolbar {
+        position: relative;
+    } .toolbar .container {
+        position: fixed;
+        transition: .5s;
+        z-index: 1;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 30vh;
+        flex-direction: column;
+        justify-content: space-evenly;
+        border-radius: 20px;
+        box-shadow: 0 -5px 15px var(--cor_escuro_25);
+    }
+   .filtro {
+        width: var(--perc_11);
+   }
+   .toolbar .container.menu_aberto {
+        bottom: 0;
+   }
+   .toolbar .container.menu_fechado {
+    bottom: -100%;
+   }
+   #btn_acessa_filtros_mobile {
+        z-index: 1;
+        display: grid;
+        cursor:pointer;
+        position: fixed;
+        transition: .5s .1s;
+        bottom:15px;
+        right:15px;
+        height: 60px;
+        width:60px;
+        background-color: rgba(var(--cor_primaria_rgb),.1);
+        color:var(--cor_primaria);
+        border-radius:50%;
+   } #btn_acessa_filtros_mobile.ativo {
+        bottom:calc(30vh - 25px);
+        background-color: var(--cor_primaria);
+        color:var(--cor_branco);
+   }
+}
+
+
+

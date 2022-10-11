@@ -1,4 +1,8 @@
 @import url(./header.css);
+@import url(./logotipo.css);
+@import url(./toolbar.css);
+@import url(./galeria_produtos.css);
+@import url(./footer.css);
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;500;600;700&display=swap');
 
 * {
@@ -6,9 +10,10 @@
     margin:0;
     box-sizing:border-box;
     font-weight: 600;
+    font-family: 'Poppins', sans-serif;
 }
 
-button {
+button, input {
     border:none;
     background: transparent;
     outline:none;
@@ -16,49 +21,51 @@ button {
 
 body {
     background-color: var(--cor_base);
-    font-family: 'Poppins', sans-serif;
     max-width: 100vw;
     font-size: 12px;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 :root {
     --cor_base: #f6f6f6;
     --cor_branco: #ffffff;
-    --cor_primaria: #8F16BA;
-    --cor_primaria_50:#8e16ba8f;
-    --cor_primaria_25:#8e16ba49;
+    --cor_primaria_rgb: 143, 22, 186; /* Alterar cor primária, colocar o código RGB aqui*/
+    --cor_primaria: rgba(var(--cor_primaria_rgb));
+    --cor_primaria_50: rgba(var(--cor_primaria_rgb),.5);
+    --cor_primaria_25:rgba(var(--cor_primaria_rgb),.25);
     --cor_escuro:#181818;
     --cor_escuro_50:#18181894;
     --cor_escuro_25:#18181818;
     --cor_suave:#686868;
     --cor_suave_50:#6868688c;
     --cor_suave_25:#68686815;
-    --cor_sucesso:#2BC368;
+    --cor_sucesso:#2bc368;
     --cor_alerta:#dbd818;
     --cor_erro:crimson;
+    --cor_suave_rgb: 0,0,0;
 
-    --w_1 : 8.33%;
-    --w_2 : 16.66%;
-    --w_3 : 25%;
-    --w_4 : 33.33%;
-    --w_5 : 41.66%;
-    --w_6 : 50%;
-    --w_7 : 58.33%;
-    --w_8 : 66.66%;
-    --w_9 : 75%;
-    --w_10: 83.33%;
-    --w_11: 91.66%;
-    --w_full: 100%;
+    --perc_1 : 8.33%;
+    --perc_2 : 16.66%;
+    --perc_3 : 25%;
+    --perc_4 : 33.33%;
+    --perc_5 : 41.66%;
+    --perc_6 : 50%;
+    --perc_7 : 58.33%;
+    --perc_8 : 66.66%;
+    --perc_9 : 75%;
+    --perc_10: 83.33%;
+    --perc_11: 91.66%;
+    --perc_full: 100%;
 }
 
 .container {
     margin: 0 auto;
-    width: var(--w_8);
+    width: var(--perc_8);
+    height: var(--perc_full);
 }
 @media (max-width: 1200px) {
     .container{
-        width: var(--w_11);
+        width: var(--perc_11);
     }
 }
 
@@ -75,17 +82,17 @@ body {
     place-items: center;
 }
 
-.col_1  {width: var(--w_1);}
-.col_2  {width: var(--w_2);}
-.col_3  {width: var(--w_3);}
-.col_4  {width: var(--w_4);}
-.col_5  {width: var(--w_5);}
-.col_6  {width: var(--w_6);}
-.col_7  {width: var(--w_7);}
-.col_8  {width: var(--w_8);}
-.col_9  {width: var(--w_9);}
-.col_10 {width: var(--w_10);}
-.col_11 {width: var(--w_11);}
-.col_12 {width: var(--w_full);}
+.col_1  {width: var(--perc_1);}
+.col_2  {width: var(--perc_2);}
+.col_3  {width: var(--perc_3);}
+.col_4  {width: var(--perc_4);}
+.col_5  {width: var(--perc_5);}
+.col_6  {width: var(--perc_6);}
+.col_7  {width: var(--perc_7);}
+.col_8  {width: var(--perc_8);}
+.col_9  {width: var(--perc_9);}
+.col_10 {width: var(--perc_10);}
+.col_11 {width: var(--perc_11);}
+.col_12 {width: var(--perc_full);}
 
 
