@@ -36,28 +36,171 @@
     </header>
     <div class="toolbar">
         <div class="container flex_row menu_fechado">
-            <form class="filtro flex_row">
-                <div class="filtro_campo campo_lista" id="filtro_categoria">
-                    <select name="cat">
-                        <option selected disabled>Categoria</option>
-                        <option value="1">Teste</option>
-                        <option value="2">Outro teste</option>
+           <div class="container_campo">
+                <label for="filtro_categoria" class="campo_label">Categoria</label>
+                <div class="campo">
+                    <select name="categoria" id="filtro_categoria">
+                        <option selected disabled>Selecione...</option>
+                        <option value="1">Aniversario</option>
+                        <option value="2">Batizado</option>
                     </select>
                 </div>
-                <button class="centralize_item filtro_btn" type="submit"><i class="fa-solid fa-filter"></i></button>
-            </form>
-            <form class="filtro flex_row">
-                <div class="filtro_campo campo_pesquisa flex_row">
-                    <input type="text" name="pesquisa" placeholder="pesquisar na loja">
-                </div>
-                <button class="centralize_item filtro_btn"><i class="fa-solid fa-magnifying-glass"></i></button>
-        </form>
+                <button type="submit" class="campo_acao"><i class="fa-solid fa-filter"></i></button>
+           </div>
+           <div class="container_campo">
+            <div class="campo">
+                <input type="text" name="pesquisa" id="filtro_pesquisa" placeholder="pesquisar na loja">
+            </div>
+            <button class="campo_acao"><i class="fa-solid fa-magnifying-glass"></i></button>
+           </div>
+           <button id="btn_acessa_filtros_mobile" class="centralize_item" onclick="controlaMenuFiltro(this)"><i class="fa-solid fa-filter"></i></button>
         </div>
-        <button id="btn_acessa_filtros_mobile" class="centralize_item" onclick="controlaMenuFiltro(this)"><i class="fa-solid fa-filter"></i></button>
     </div>
     <section class="galeria_produtos">
         <div class="container">
-
+            <div class="produto">
+                <div class="produto_imagem">
+                    <img src="src/produto.jpg" alt="produto">
+                </div>
+                <div class="produto_info">
+                    <h1 class="produto_nome">Balão com Arco</h1>
+                    <p class="produto_descricao">Balão blablablabla</p>
+                    <footer>
+                        <h1 class="produto_valor">R$ 78,90</h2>
+                        <a href="#" class="produto_acesso">Acessar</a>
+                    </footer>
+                </div>
+            </div>
+            <div class="produto">
+                <div class="produto_imagem">
+                    <img src="src/produto.jpg" alt="produto">
+                </div>
+                <div class="produto_info">
+                    <h1 class="produto_nome">Balão com Arco</h1>
+                    <p class="produto_descricao">Balão blablablabla</p>
+                    <footer>
+                        <h1 class="produto_valor">R$ 78,90</h2>
+                        <a href="#" class="produto_acesso">Acessar</a>
+                    </footer>
+                </div>
+            </div>
+            <div class="produto">
+                <div class="produto_imagem">
+                    <img src="src/produto.jpg" alt="produto">
+                </div>
+                <div class="produto_info">
+                    <h1 class="produto_nome">Balão com Arco</h1>
+                    <p class="produto_descricao">Balão blablablabla</p>
+                    <footer>
+                        <h1 class="produto_valor">R$ 78,90</h2>
+                        <a href="#" class="produto_acesso">Acessar</a>
+                    </footer>
+                </div>
+            </div>
+            <div class="produto">
+                <div class="produto_imagem">
+                    <img src="src/produto.jpg" alt="produto">
+                </div>
+                <div class="produto_info">
+                    <h1 class="produto_nome">Balão com Arco</h1>
+                    <p class="produto_descricao">Balão blablablabla</p>
+                    <footer>
+                        <h1 class="produto_valor">R$ 78,90</h2>
+                        <a href="#" class="produto_acesso">Acessar</a>
+                    </footer>
+                </div>
+            </div>
+            <div class="produto">
+                <div class="produto_imagem">
+                    <img src="src/produto.jpg" alt="produto">
+                </div>
+                <div class="produto_info">
+                    <h1 class="produto_nome">Balão com Arco</h1>
+                    <p class="produto_descricao">Balão blablablabla</p>
+                    <footer>
+                        <h1 class="produto_valor">R$ 78,90</h2>
+                        <a href="#" class="produto_acesso">Acessar</a>
+                    </footer>
+                </div>
+            </div>
+            <div class="produto">
+                <div class="produto_imagem">
+                    <img src="src/produto.jpg" alt="produto">
+                </div>
+                <div class="produto_info">
+                    <h1 class="produto_nome">Balão com Arco</h1>
+                    <p class="produto_descricao">Balão blablablabla</p>
+                    <footer>
+                        <h1 class="produto_valor">R$ 78,90</h2>
+                        <a href="#" class="produto_acesso">Acessar</a>
+                    </footer>
+                </div>
+            </div>
+            <div class="produto">
+                <div class="produto_imagem">
+                    <img src="src/produto.jpg" alt="produto">
+                </div>
+                <div class="produto_info">
+                    <h1 class="produto_nome">Balão com Arco</h1>
+                    <p class="produto_descricao">Balão blablablabla</p>
+                    <footer>
+                        <h1 class="produto_valor">R$ 78,90</h2>
+                        <a href="#" class="produto_acesso">Acessar</a>
+                    </footer>
+                </div>
+            </div>
+            <div class="produto">
+                <div class="produto_imagem">
+                    <img src="src/produto.jpg" alt="produto">
+                </div>
+                <div class="produto_info">
+                    <h1 class="produto_nome">Balão com Arco</h1>
+                    <p class="produto_descricao">Balão blablablabla</p>
+                    <footer>
+                        <h1 class="produto_valor">R$ 78,90</h2>
+                        <a href="#" class="produto_acesso">Acessar</a>
+                    </footer>
+                </div>
+            </div>
+            <div class="produto">
+                <div class="produto_imagem">
+                    <img src="src/produto.jpg" alt="produto">
+                </div>
+                <div class="produto_info">
+                    <h1 class="produto_nome">Balão com Arco</h1>
+                    <p class="produto_descricao">Balão blablablabla</p>
+                    <footer>
+                        <h1 class="produto_valor">R$ 78,90</h2>
+                        <a href="#" class="produto_acesso">Acessar</a>
+                    </footer>
+                </div>
+            </div>
+            <div class="produto">
+                <div class="produto_imagem">
+                    <img src="src/produto.jpg" alt="produto">
+                </div>
+                <div class="produto_info">
+                    <h1 class="produto_nome">Balão com Arco</h1>
+                    <p class="produto_descricao">Balão blablablabla</p>
+                    <footer>
+                        <h1 class="produto_valor">R$ 78,90</h2>
+                        <a href="#" class="produto_acesso">Acessar</a>
+                    </footer>
+                </div>
+            </div>
+            <div class="produto">
+                <div class="produto_imagem">
+                    <img src="src/produto.jpg" alt="produto">
+                </div>
+                <div class="produto_info">
+                    <h1 class="produto_nome">Balão com Arco</h1>
+                    <p class="produto_descricao">Balão blablablabla</p>
+                    <footer>
+                        <h1 class="produto_valor">R$ 78,90</h2>
+                        <a href="#" class="produto_acesso">Acessar</a>
+                    </footer>
+                </div>
+            </div>
         </div>
     </section>
     <footer>

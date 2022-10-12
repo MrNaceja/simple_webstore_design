@@ -1,5 +1,27 @@
 .galeria_produtos {
-    /* height: 100vh;
-    background-color: var(--cor_primaria); */
+    height: var(--perc_full);
+    margin-top: 1em;
 }
-.galeria_produtos .container {}
+.galeria_produtos .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap:1em;
+}
+
+/* Estilização Dispositivos Mobile */
+@media (max-width: 700px) {
+    .galeria_produtos .container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 500px) {
+    .galeria_produtos .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        grid-gap: 3em;
+    }
+    .galeria_produtos .container .produto {
+        width: var(--perc_8);
+    }
+}

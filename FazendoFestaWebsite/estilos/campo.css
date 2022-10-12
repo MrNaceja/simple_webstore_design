@@ -1,0 +1,53 @@
+.container_campo {
+    min-width: 250px;
+    width: max-content;
+    height: 3.5em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 2px solid var(--cor_suave_25);
+    border-radius: .5em;
+    color: var(--cor_suave_50);
+}
+
+.campo_label {
+    background: var(--cor_suave_25);
+    padding: 0 .3em;
+}
+.campo {
+    /* width: var(--perc_9); */
+    width: calc(var(--perc_full) - var(--perc_3));
+}
+.campo_acao {
+    background: var(--cor_suave_25);
+    color: var(--cor_suave_50);
+    cursor: pointer;
+    width: var(--perc_3);
+    transition: .4s;
+} .campo_acao:hover {
+    color: var(--cor_suave);
+}
+
+.container_campo [class^="campo"] {
+    height: var(--perc_full);
+    display: grid;
+    place-items: center;
+    max-width: 200px;
+}
+
+.campo select {
+    outline: none;
+    appearance: none;
+    border: none;
+    background: none;
+    text-align: center;
+    color: var(--cor_suave_50);
+    width:var(--perc_full);
+}
+.campo input {
+    width:var(--perc_full);
+    padding:0 .5em;
+    color: var(--cor_suave_50);
+}.campo input::-webkit-input-placeholder {
+    color: var(--cor_suave_50);
+}

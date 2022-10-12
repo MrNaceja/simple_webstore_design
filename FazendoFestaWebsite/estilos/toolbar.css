@@ -1,130 +1,69 @@
 .toolbar {
-    height: 60px;
+    margin-top: calc(5em + 1em);
 }
 .toolbar .container {
-    background: var(--cor_branco);
-    height: var(--perc_full);
-    margin-top:15px;
-    border-radius: 5px;
-    border-bottom: 2px solid var(--cor_suave_25);
-    box-shadow: 0 15px 10px -20px var(--cor_suave_50);
-    align-items: center;
+    height: 80px;
+    background-color: var(--cor_branco);
+    border-radius: .5em;
+    box-shadow: 0 1em 1em -1em var(--cor_escuro_25);
+    align-items:center;
     justify-content: space-between;
-    padding: 0 10px;
-}
-
-.filtro{
-    width: var(--perc_4);
-    align-items: center;
-    height: 3.5em;
-    justify-content: space-between;
-    border: 2px solid var(--cor_suave_25);
-    border-radius: 5px;
-    overflow: hidden;
-}.filtro_campo {
-    width:var(--perc_8);
-    height:var(--perc_full);
-}.filtro_btn {
-    height:var(--perc_full);
-    width:var(--perc_3);
-    color: var(--cor_suave_50);
-    background-color: var(--cor_suave_25);
-    cursor:pointer;
-    transition: .3s;
-}   .filtro_btn:hover {
-        color: var(--cor_branco);
-        background-color: var(--cor_primaria);
-    }
-
-/* Estilização Campo de Lista */
-.campo_lista {
-    position: relative;
-    color:var(--cor_suave_50);
-    border-radius: 5px;
-}
-.campo_lista select option:disabled{
-    background-color: var(--cor_suave_25);
-    color:rgba(var(--cor_suave_rgb),.3);
-}
-.campo_lista select {
-    padding: 5px 10px;
-    color:var(--cor_suave_50);
-    border:none;
-    height: var(--perc_full);
-    width: var(--perc_full);
-    outline: none;
-    appearance: none;
-    font-weight: 500;
-}
-.campo_lista::after {
-    content: '\f160';
-    font-family: "Font Awesome 5 Free";
-    height:var(--perc_full);
-    width:var(--perc_3);
-    position: absolute;
-    display: grid;
-    place-items: center;
-    right: 10px;
-    top:0;
-    pointer-events: none;
-}
-
-/* Estilização Campo de Pesquisa */
-.campo_pesquisa input {
-    width: var(--perc_full);
-    padding:10px;
-    color:var(--cor_suave_50);
-}
-.campo_pesquisa input::-webkit-input-placeholder {
-    color:var(--cor_suave_50);
+    padding: 0 .5em;
 }
 #btn_acessa_filtros_mobile {
     display: none;
 }
+
 /* Estilização Dispositivos Mobile */
-@media (max-width: 765px) {
-    .toolbar {
-        position: relative;
-    } .toolbar .container {
-        position: fixed;
-        transition: .5s;
+@media (max-width: 650px) {
+    #btn_acessa_filtros_mobile {
+        height: 60px;
+        width: 60px;
+        border-radius: var(--perc_6);
+        background-color: var(--cor_primaria);
+        color: var(--cor_branco);
+        display: grid;
+        position: absolute;
+        right: 1em;
+        z-index:1;
+        transition: .3s;
+    }
+
+    .toolbar .container {
+        transition: .4s;
+        position:fixed;
+        height: 40vh;
+        justify-content: space-around;
         z-index: 1;
+        flex-direction: column;
+        padding: 0 4em;
         left: 50%;
         transform: translateX(-50%);
-        height: 30vh;
-        flex-direction: column;
-        justify-content: space-evenly;
-        border-radius: 20px;
-        box-shadow: 0 -5px 15px var(--cor_escuro_25);
-    }
-   .filtro {
         width: var(--perc_11);
-   }
-   .toolbar .container.menu_aberto {
+        box-shadow: 0 -10px 15px var(--cor_suave_25);
+    }
+    .toolbar .container.menu_fechado {
+        bottom:-40%
+    }
+    .toolbar .container.menu_aberto {
         bottom: 0;
-   }
-   .toolbar .container.menu_fechado {
-    bottom: -100%;
-   }
-   #btn_acessa_filtros_mobile {
-        z-index: 1;
-        display: grid;
-        cursor:pointer;
-        position: fixed;
-        transition: .5s .1s;
-        bottom:15px;
-        right:15px;
-        height: 60px;
-        width:60px;
-        background-color: rgba(var(--cor_primaria_rgb),.1);
-        color:var(--cor_primaria);
-        border-radius:50%;
-   } #btn_acessa_filtros_mobile.ativo {
-        bottom:calc(30vh - 25px);
+    }
+    .toolbar .container.menu_fechado #btn_acessa_filtros_mobile {
+        top: -5.5em;
+    }
+    .toolbar .container.menu_aberto #btn_acessa_filtros_mobile {
+        top: -2em;
+    }
+
+    .toolbar .container_campo {
+        width:var(--perc_full);
+        justify-content: space-between;
+        margin-bottom: 1em;
+    }
+    .toolbar .container.menu_aberto ~ #btn_acessa_filtros_mobile  {
         background-color: var(--cor_primaria);
-        color:var(--cor_branco);
-   }
+        color: var(--cor_branco);
+        bottom: calc(40vh - 30px)
+    }
+
 }
-
-
-

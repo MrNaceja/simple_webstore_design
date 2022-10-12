@@ -1,0 +1,68 @@
+.produto {
+    min-width: 200px;
+    width:var(--perc_full);
+    height: 350px;
+    background: var(--cor_branco);
+    border-radius: .5em;
+    overflow: hidden;
+    user-select: none;
+    box-shadow: 0 5px 5px var(--cor_suave_25);
+    transition: .4s;
+} .produto:hover {
+    transform: translateY(-5px);
+}
+
+.produto_imagem {
+    height: var(--perc_8);
+    width: var(--perc_full);
+    background-color: rebeccapurple;
+    overflow: hidden;
+} .produto_imagem img {
+    min-width:var(--perc_full);
+    min-height:var(--perc_full);
+    width: 200px;
+    height:200px;
+}
+.produto_info {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    height: var(--perc_4);
+}
+.produto_nome {
+    color: var(--cor_suave);
+    font-weight: bold;
+    font-size: 1.5em;
+}
+.produto_descricao {
+    color: var(--cor_suave_50);
+    font-weight: 400;
+    font-size: 1em;
+}
+.produto_valor {
+    color: var(--cor_sucesso);
+    font-weight: bold;
+    font-size: 1.8em;
+}
+.produto_acesso {
+    text-decoration: none;
+    width: max-content;
+    padding: 1em; 
+    background-color: rgba(var(--cor_primaria_rgb),.1);
+    color:var(--cor_primaria);
+    border-radius: .5em;
+    transform: translateX(100%);
+    transition: .2s ease-in-out;
+    font-size:1.2em;
+}
+.produto:hover .produto_acesso {
+    transform: translateX(0);
+}
+.produto footer {
+    background: transparent;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}

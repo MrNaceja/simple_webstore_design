@@ -1,6 +1,8 @@
 @import url(./header.css);
 @import url(./logotipo.css);
 @import url(./toolbar.css);
+@import url(./campo.css);
+@import url(./produto.css);
 @import url(./galeria_produtos.css);
 @import url(./footer.css);
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;500;600;700&display=swap');
@@ -22,8 +24,9 @@ button, input {
 body {
     background-color: var(--cor_base);
     max-width: 100vw;
-    font-size: 12px;
+    max-height: 100vh;
     overflow-x: hidden;
+    font-size: 12px;
 }
 
 :root {

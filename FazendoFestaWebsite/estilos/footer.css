@@ -2,9 +2,8 @@ footer {
     height: 20vh;
     background: var(--cor_suave_25);
     color: var(--cor_escuro_50);
-    position: absolute;
     width: var(--perc_full);
-    bottom: 0;
+    margin-top: 1em;
 }
 footer .logo {
     filter: grayscale(100%) opacity(.5);
