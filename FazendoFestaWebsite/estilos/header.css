@@ -17,6 +17,7 @@ header nav {
     height:var(--perc_full);
     font-size: 1.2em;
     display: flex;
+    justify-content: flex-end;
 } header nav a {
         transition: .2s;
         cursor:pointer;

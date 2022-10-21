@@ -4,7 +4,8 @@
     height: 350px;
     background: var(--cor_branco);
     border-radius: .5em;
-    overflow: hidden;
+    /* overflow: hidden; */
+    position: relative;
     user-select: none;
     box-shadow: 0 5px 5px var(--cor_suave_25);
     transition: .4s;
@@ -13,6 +14,7 @@
 }
 
 .produto_imagem {
+    border-radius: .5em .5em 0 0;
     height: var(--perc_8);
     width: var(--perc_full);
     background-color: rebeccapurple;
@@ -42,11 +44,12 @@
 .produto_valor {
     color: var(--cor_sucesso);
     font-weight: bold;
+    width:var(--perc_6);
     font-size: 1.8em;
 }
 .produto_acesso {
     text-decoration: none;
-    width: max-content;
+    width:var(--perc_6);
     padding: 1em; 
     background-color: rgba(var(--cor_primaria_rgb),.1);
     color:var(--cor_primaria);
@@ -54,6 +57,8 @@
     transform: translateX(100%);
     transition: .2s ease-in-out;
     font-size:1.2em;
+    border-radius: 1em;
+    cursor:pointer;
 }
 .produto:hover .produto_acesso {
     transform: translateX(0);
@@ -64,5 +69,28 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
 
+.produto_categoria {
+    padding: .5em;
+    border-radius: 0 .5em 0 .5em;
+    background-color: var(--cor_primaria);
+    text-align: center;
+    min-width: var(--perc_4);
+    width: max-content;
+    position: absolute;
+    right: -.5em;
+    color: var(--cor_branco);
+    font-size:1.3em;
+    margin-bottom: 1em;
+} .produto_categoria::after {
+    content: '';
+    z-index: -1;
+    height: 1em;
+    width: 1em;
+    position: absolute;
+    bottom:-.5em;
+    right: 4px;
+    transform: rotate(45deg);
+    background-color: var(--cor_primaria_50);
 }

@@ -5,8 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./estilos/estilo_global.css">
-    <script src="./comportamentos/header.js"></script>
-    <script src="./comportamentos/toolbar.js"></script>
+    <script src="./comportamentos/Principal.js"></script>
     <script src="https://kit.fontawesome.com/dbe0b3e2fa.js" crossorigin="anonymous"></script>
     <title>Fazendo Festa Store</title>
 </head>
@@ -17,7 +16,7 @@
                 <h1>fazendo</h1>
                 <h1>festa</h1>
             </div>
-            <nav class="col_7 menu_fechado">
+            <nav id="menu_navegacao_mobile" class="col_7 menu_fechado">
                 <a class="centralize_item col_3 ativo">
                     <h4>Home</h4>
                 </a>
@@ -25,22 +24,19 @@
                     <h4>Sobre</h4>
                 </a>
                 <a class="centralize_item col_3">
-                    <h4>Gerenciamento</h4>
-                </a>
-                <a class="centralize_item col_3">
-                    <h4>Sair</h4>
+                    <h4>Login</h4>
                 </a>
             </nav>
-            <button class="centralize_item" id="btn_abre_fecha_menu_mobile" onclick="controlaMenu(this)"><i class="btn_hamburguer_cross"></i></button>
+            <button class="centralize_item" id="btn_abre_fecha_menu_mobile" onclick="Principal.controlaMenuNavegacaoMobile()"><i class="btn_hamburguer_cross"></i></button>
         </div>
     </header>
     <div class="toolbar">
-        <div class="container flex_row menu_fechado">
+        <div class="container flex_row menu_fechado" id="menu_filtro_mobile">
            <div class="container_campo">
                 <label for="filtro_categoria" class="campo_label">Categoria</label>
                 <div class="campo">
                     <select name="categoria" id="filtro_categoria">
-                        <option selected disabled>Selecione...</option>
+                        <option selected>Todos</option>
                         <option value="1">Aniversario</option>
                         <option value="2">Batizado</option>
                     </select>
@@ -53,12 +49,13 @@
             </div>
             <button class="campo_acao"><i class="fa-solid fa-magnifying-glass"></i></button>
            </div>
-           <button id="btn_acessa_filtros_mobile" class="centralize_item" onclick="controlaMenuFiltro(this)"><i class="fa-solid fa-filter"></i></button>
+           <button id="btn_acessa_filtros_mobile" class="centralize_item" onclick="Principal.controlaMenuFiltroMobile()"><i class="fa-solid fa-filter"></i></button>
         </div>
     </div>
     <section class="galeria_produtos">
         <div class="container">
             <div class="produto">
+                <span class="produto_categoria">Balões</span>
                 <div class="produto_imagem">
                     <img src="src/produto.jpg" alt="produto">
                 </div>
@@ -67,11 +64,12 @@
                     <p class="produto_descricao">Balão blablablabla</p>
                     <footer>
                         <h1 class="produto_valor">R$ 78,90</h2>
-                        <a href="#" class="produto_acesso">Acessar</a>
+                        <button href="produto.html" class="produto_acesso" onclick="Principal.abreModalProduto()">Ver mais</button>
                     </footer>
                 </div>
             </div>
             <div class="produto">
+                <span class="produto_categoria">Convites</span>
                 <div class="produto_imagem">
                     <img src="src/produto.jpg" alt="produto">
                 </div>
@@ -80,11 +78,12 @@
                     <p class="produto_descricao">Balão blablablabla</p>
                     <footer>
                         <h1 class="produto_valor">R$ 78,90</h2>
-                        <a href="#" class="produto_acesso">Acessar</a>
+                        <button href="produto.html" class="produto_acesso" onclick="Principal.abreModalProduto()">Ver mais</button>
                     </footer>
                 </div>
             </div>
             <div class="produto">
+                <span class="produto_categoria">Topos de Bolo</span>
                 <div class="produto_imagem">
                     <img src="src/produto.jpg" alt="produto">
                 </div>
@@ -93,11 +92,12 @@
                     <p class="produto_descricao">Balão blablablabla</p>
                     <footer>
                         <h1 class="produto_valor">R$ 78,90</h2>
-                        <a href="#" class="produto_acesso">Acessar</a>
+                        <button href="produto.html" class="produto_acesso" onclick="Principal.abreModalProduto()">Ver mais</button>
                     </footer>
                 </div>
             </div>
             <div class="produto">
+                <span class="produto_categoria">Arranjos</span>
                 <div class="produto_imagem">
                     <img src="src/produto.jpg" alt="produto">
                 </div>
@@ -106,11 +106,12 @@
                     <p class="produto_descricao">Balão blablablabla</p>
                     <footer>
                         <h1 class="produto_valor">R$ 78,90</h2>
-                        <a href="#" class="produto_acesso">Acessar</a>
+                        <button href="produto.html" class="produto_acesso" onclick="Principal.abreModalProduto()">Ver mais</button>
                     </footer>
                 </div>
             </div>
             <div class="produto">
+                <span class="produto_categoria">Caixas Personalizadas</span>
                 <div class="produto_imagem">
                     <img src="src/produto.jpg" alt="produto">
                 </div>
@@ -119,90 +120,27 @@
                     <p class="produto_descricao">Balão blablablabla</p>
                     <footer>
                         <h1 class="produto_valor">R$ 78,90</h2>
-                        <a href="#" class="produto_acesso">Acessar</a>
+                        <button href="produto.html" class="produto_acesso" onclick="Principal.abreModalProduto()">Ver mais</button>
                     </footer>
                 </div>
             </div>
-            <div class="produto">
-                <div class="produto_imagem">
-                    <img src="src/produto.jpg" alt="produto">
-                </div>
-                <div class="produto_info">
-                    <h1 class="produto_nome">Balão com Arco</h1>
-                    <p class="produto_descricao">Balão blablablabla</p>
-                    <footer>
-                        <h1 class="produto_valor">R$ 78,90</h2>
-                        <a href="#" class="produto_acesso">Acessar</a>
-                    </footer>
-                </div>
-            </div>
-            <div class="produto">
-                <div class="produto_imagem">
-                    <img src="src/produto.jpg" alt="produto">
-                </div>
-                <div class="produto_info">
-                    <h1 class="produto_nome">Balão com Arco</h1>
-                    <p class="produto_descricao">Balão blablablabla</p>
-                    <footer>
-                        <h1 class="produto_valor">R$ 78,90</h2>
-                        <a href="#" class="produto_acesso">Acessar</a>
-                    </footer>
-                </div>
-            </div>
-            <div class="produto">
-                <div class="produto_imagem">
-                    <img src="src/produto.jpg" alt="produto">
-                </div>
-                <div class="produto_info">
-                    <h1 class="produto_nome">Balão com Arco</h1>
-                    <p class="produto_descricao">Balão blablablabla</p>
-                    <footer>
-                        <h1 class="produto_valor">R$ 78,90</h2>
-                        <a href="#" class="produto_acesso">Acessar</a>
-                    </footer>
-                </div>
-            </div>
-            <div class="produto">
-                <div class="produto_imagem">
-                    <img src="src/produto.jpg" alt="produto">
-                </div>
-                <div class="produto_info">
-                    <h1 class="produto_nome">Balão com Arco</h1>
-                    <p class="produto_descricao">Balão blablablabla</p>
-                    <footer>
-                        <h1 class="produto_valor">R$ 78,90</h2>
-                        <a href="#" class="produto_acesso">Acessar</a>
-                    </footer>
-                </div>
-            </div>
-            <div class="produto">
-                <div class="produto_imagem">
-                    <img src="src/produto.jpg" alt="produto">
-                </div>
-                <div class="produto_info">
-                    <h1 class="produto_nome">Balão com Arco</h1>
-                    <p class="produto_descricao">Balão blablablabla</p>
-                    <footer>
-                        <h1 class="produto_valor">R$ 78,90</h2>
-                        <a href="#" class="produto_acesso">Acessar</a>
-                    </footer>
-                </div>
-            </div>
-            <div class="produto">
-                <div class="produto_imagem">
-                    <img src="src/produto.jpg" alt="produto">
-                </div>
-                <div class="produto_info">
-                    <h1 class="produto_nome">Balão com Arco</h1>
-                    <p class="produto_descricao">Balão blablablabla</p>
-                    <footer>
-                        <h1 class="produto_valor">R$ 78,90</h2>
-                        <a href="#" class="produto_acesso">Acessar</a>
-                    </footer>
-                </div>
-            </div>
-        </div>
     </section>
+
+    <dialog id="modal_produto">
+        <button id="modal_produto_acao_fechar" onclick="Principal.fechaModalProduto()"><i class="fa-regular fa-circle-xmark"></i></button>
+        <div class="container">
+            <img src="src/produto.jpg" alt="produto">
+            <main class="modal_produto_info">
+                <article>
+                    <h1 class="modal_produto_nome">Balão <span class="modal_produto_categoria">Balões</span></h1>
+                    <p class="modal_produto_descricao">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere repudiandae veritatis, fugiat voluptate laudantium officiis itaque possimus tempora minus ea, enim error iure rerum nam harum labore autem unde eum?</p>
+                    <h1 class="modal_produto_valor">R$<span>78,90</span></h1>
+                </article>
+                <button class="modal_produto_acao_contato">Conversar<i class="fa-brands fa-whatsapp fa-4x"></i></button>
+            </main>
+        </div>
+    </dialog>
+
     <footer>
         <div class="container flex_row">
             <div class="logo flex_row">

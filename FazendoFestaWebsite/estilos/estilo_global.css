@@ -4,6 +4,7 @@
 @import url(./campo.css);
 @import url(./produto.css);
 @import url(./galeria_produtos.css);
+@import url(./modal_produto.css);
 @import url(./footer.css);
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;500;600;700&display=swap');
 
@@ -14,6 +15,7 @@
     font-weight: 600;
     font-family: 'Poppins', sans-serif;
 }
+dialog {margin: auto;}
 
 button, input {
     border:none;
@@ -43,6 +45,7 @@ body {
     --cor_suave_50:#6868688c;
     --cor_suave_25:#68686815;
     --cor_sucesso:#2bc368;
+    --cor_sucesso_25:#2bc36828;
     --cor_alerta:#dbd818;
     --cor_erro:crimson;
     --cor_suave_rgb: 0,0,0;
@@ -70,6 +73,19 @@ body {
     .container{
         width: var(--perc_11);
     }
+}
+
+::-webkit-scrollbar {
+    width: .5em;
+    background-color: transparent;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-track {
+    background: var(--cor_suave_25);
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--cor_suave_50);
+    border-radius:.5em;
 }
 
 .flex_row {

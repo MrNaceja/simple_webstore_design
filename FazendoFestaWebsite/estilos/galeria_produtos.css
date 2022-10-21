@@ -1,11 +1,11 @@
 .galeria_produtos {
     height: var(--perc_full);
-    margin-top: 1em;
+    margin: 1em 0;
 }
 .galeria_produtos .container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap:1em;
+    grid-gap:2em;
 }
 
 /* Estilização Dispositivos Mobile */

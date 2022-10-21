@@ -43,16 +43,16 @@
         box-shadow: 0 -10px 15px var(--cor_suave_25);
     }
     .toolbar .container.menu_fechado {
-        bottom:-40%
+        bottom:-45%
     }
     .toolbar .container.menu_aberto {
         bottom: 0;
     }
     .toolbar .container.menu_fechado #btn_acessa_filtros_mobile {
-        top: -5.5em;
+        top: -7.5em;
     }
     .toolbar .container.menu_aberto #btn_acessa_filtros_mobile {
-        top: -2em;
+        top: -3em;
     }
 
     .toolbar .container_campo {
